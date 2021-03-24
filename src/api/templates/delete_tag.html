@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Удаление Тегов</h3>
+{% for tag in tags %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{tag}}</h5>
+      <a href= "{% url 'api:delete_tag' tag_id=tag.id %}" class="btn btn-primary" style="border-color: red; background-color: red;">Delete</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock %}

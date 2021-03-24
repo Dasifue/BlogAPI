@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style="width: 86rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="clip">{{post.body}}</p>
+      <a href= "{% url 'api:delete_post' post_id=post.id %}" class="btn btn-primary" style="background-color: red; border-color: red;">Delete</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <h3>Посты</h3>
+    {% for post in posts %}
+    <style>
+        p.clip {
+         white-space: nowrap; /* Запрещаем перенос строк */
+         overflow: hidden; /* Обрезаем все, что не помещается в область */
+         padding: 5px; /* Поля вокруг текста */
+         text-overflow: ellipsis; /* Добавляем многоточие */
+        }
+       </style>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{post}}</h5>
+          <p class="clip">{{post.body}}</p>
+          <a href= "{% url 'api:post_detail' post_id=post.id %}" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+      <p></p>
+    {% endfor %}
+</body>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <h3>Мои посты</h3>
+    {% for post in posts %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{post}}</h5>
+          <p class="clip">{{post.body}}</p>
+          <a href= "{% url 'api:post_detail' post_id=post.id %}" class="btn btn-primary">More info</a>
+        </div>
+      </div>
+      <p></p>
+    {% endfor %}
+</body>
+{% endblock %}

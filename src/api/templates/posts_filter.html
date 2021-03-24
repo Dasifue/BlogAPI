@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for post in posts %}
+<div class="card" style="width: 86rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="clip">{{post.body}}</p>
+    </div>
+  </div>
+  <p></p>
+{% endfor %}
+{% endblock %}
